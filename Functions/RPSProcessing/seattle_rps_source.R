@@ -47,11 +47,6 @@ subsetMerge <- function(dataFrame1, dataFrame2, keepColumns, joinColumns){
 
   require(dplyr)
 
-  # DataFrame1: Column that will be subsetted using keepColumns
-  # DataFrame2: Data frame that dataFrame1 post-subset will be merged with
-  # keepColumns: vector of columns to subset dataFrame1 to
-  # joinColumns: vector of columns to join on when using 'inner_join'
-
   # Subset the columns down to what the user specifies in 'keepColumns'
   subDataFrame1 <- subset(dataFrame1, select = keepColumns)
   # inner_join data sets together

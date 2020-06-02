@@ -54,14 +54,14 @@ yearlyInflationRef <- function(startYear, dataFrame, columnYearName, targetColum
   avgCPI <- apply.yearly(CPIAUCSL, mean)
   
   # Filter paste
-  filter <- paste0(startYear, "::")
+  filter <- paste0(startYear, "::", inflationYear)
   
   # Subset to startYear based on real estate data
   avgCPI <- avgCPI[filter]
   
   # Calcualte conversion factor
-  conversion <- as.vector(as.numeric(avgCPI[inflationYear])/avgCPI)
-  years <- seq(startYear, 2019, 1)
+  conversion <- as.vector(as.numeric(avgCPI[as.character(inflationYear)])/avgCPI)
+  years <- seq(startYear, inflationYear, 1)
   
   # Inflation data frame
   inflDf <- as.data.frame(cbind(years,
