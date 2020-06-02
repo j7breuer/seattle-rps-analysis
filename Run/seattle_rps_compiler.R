@@ -167,7 +167,7 @@ seattle_rps_compiler <- function(rpsDf, rbDf, latest_date, topN, save_wd, data_w
   
   # If user specified to save data set, save it
   if (tolower(save_df) == "y"){
-    write.csv(finalDf, paste0(save_wd, "/Seattle_RPS_Output", Sys.Date()), ".csv", row.names = FALSE)
+    write.csv(finalDf, paste0("Seattle_RPS_Output_", Sys.Date()), ".csv", row.names = FALSE)
   }
   
 }
