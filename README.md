@@ -64,8 +64,23 @@ install.packages(htmlwidgets)
 install.packages(webshot)
 ```
 
+## Analytics Pipeline Steps
+1. Load in data and subset to user-defined data range
+2. Roughly subset the data to purchases made by the labor market as opposed to real estate companies buying/selling/flipping houses
+3. Adjust prices for inflation based on end year - if user specified timeline till 2018-01-01, real estate prices will be in 2018 dollars
+4. Enrich data set with property specs (bedroom count, total square footage, etc.)
+5. Clean and process zipcodes as a field to group on
+6. Group data set by zipcodes, bedroom-bath count, and by years to get volume of transactions and avg/total sale price
+7. Create Stock data set for companies listed above, join on data set by years
+8. Calculate percentage change YoY for average sale price and stock price, standardize data for integral
+9. Calculate integral between time series chart to get area between two lines and run correlation on lines as methods for analysis
+10. Return/plot data in order of highest score ([-1, 1] scale)
+
+## Covid-19 Impact on Analysis
+Seattle's real estate market slowed down drastically between January-March of 2020, it is recommended to run analysis up until end of 2019.
+
 ## Author
 J Breuer - j7breuer@gmail.com.  Please reach out with any questions.
 
 ## Updates
-Please reach out with analysis ideas, I've got a few but have not gotten around to them yet. 
+Please reach out with analysis ideas, I've got a few but have not gotten around to them yet.  Would be interested to incorporate Fourier's transformations as a means of analysis.
