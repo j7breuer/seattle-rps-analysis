@@ -64,7 +64,7 @@ install.packages(webshot)
 ```
 
 ## R Zipcode Package - CRAN Removal
-This code uses the zipcode package in R which has now been removed, to download and install please navigate to this to this [link](website).  Download the zipcode_1.0.tar.gz and store it in a directory of your choice.  Run the following code with the directory in place of 'path/to/zipcode/download':
+This code uses the zipcode package in R which has now been removed, to download and install please navigate to this to this [link](https://cran.r-project.org/src/contrib/Archive/zipcode/).  Download the zipcode_1.0.tar.gz and store it in a directory of your choice.  Run the following code with the directory in place of 'path/to/zipcode/download':
 ```R
 install.packages("path/to/zipcode/download", repos = NULL, type = "source")
 ```
