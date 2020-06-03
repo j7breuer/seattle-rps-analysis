@@ -19,10 +19,10 @@ For this analysis, two data sets are required.  These data sets are maintained b
 2. Check 'acknowledgement' box
 3. Select 'Real Property Sales (.ZIP)' and 'Residential Building (.ZIP)' - download should begin
 4. Unzip both files into a data directory
-5. Use data dirctory for 'data_wd' variable path in code
+5. Use data directory for 'data_wd' variable path in code
 
 ## Installation
-To get started with this short-ETL/analytics pipeline, please clone the repo and navigate to the Run/seattle_rps_run.R script. The run script is below with comments on input:
+To get started with this short ETL/analytics pipeline, please clone the repo and navigate to the Run/seattle_rps_run.R script. The run script is below with comments on input:
 
 ```R
 require(data.table)
@@ -68,6 +68,8 @@ This code uses the zipcode package in R which has now been removed, to download 
 ```R
 install.packages("path/to/zipcode/download", repos = NULL, type = "source")
 ```
+## Analytics Overview
+The goal of the analysis is to explore if there is correlation of how well a company is doing (measured in stock prices) with the real estate prices around the city each company is headquartered in.  For this analysis, we are only looking at companies headquartered in Seattle due to real estate data only being available from Seattle.  Real estate sales are grouped within zipcodes and bed-bath combo.  Each zipcode will have n number of combinations for all bed-bath combos (1bd-1ba, 2bd-1ba, 4bd-3ba, etc.).  Each zipcode/bd-ba grouping is then analyzed against each stock price where both data sets are standardized and compared in year-over-year percent change.
 
 ## Analytics Pipeline Steps
 1. Load in data and subset to user-defined data range
