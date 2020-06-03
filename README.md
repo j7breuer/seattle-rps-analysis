@@ -1,5 +1,5 @@
 # Corporate Impact on Seattle's Real Estate Market
-<b>Disclaimer: This repository is used for my undergraduate economics course, the repo's code is not the most efficient as it is used in class to teach certain principles and demonstrate various ways to achieve the same desired output.</b>
+<b>Disclaimer: This repository is used for my undergraduate economics course, the repo's code is meant to teach certain principles and demonstrate various ways to achieve the same desired output.  You may see some inconsistencies in how processes are run, this is when I demonstrate to the class how not every function or process needs to be run the exact same way to achieve the same result.</b>
 
 This repository contains a process of data cleaning, processing, analytics, and visualizations to determine the impact of companies in the Seattle real estate market.  Time period for analysis runs from 2008 to user-defined year.  <b> Recommended time period is 2008 - 2019 (pre COVID-19) </b>.  Corporations included in analysis are:
 - Amazon (AMZN)
