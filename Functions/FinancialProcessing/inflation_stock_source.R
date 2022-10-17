@@ -73,7 +73,7 @@ yearlyInflationRef <- function(startYear, dataFrame, columnYearName, targetColum
   
   newTargetColName <- paste0(targetColumn, paste0(inflationYear, "_Dollars"))
   
-  dataFrame[,newTargetColName] <- dataFrame[,targetColumn] * dataFrame$InflConversionFactor
+  dataFrame[[newTargetColName]] <- dataFrame[[targetColumn]] * dataFrame$InflConversionFactor
   
   return(dataFrame)
   

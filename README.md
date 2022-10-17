@@ -54,13 +54,15 @@ seattle_rps_compiler(rpsDf = rpsDf, rbDf = rbDf,
 ```
 ## R Dependencies
 ```R
-install.packages(dplyr)
-install.packages(dygraphs)
-install.packages(data.table)
-install.packages(quantmod)
-install.packages(qdapRegex)
-install.packages(htmlwidgets)
-install.packages(webshot)
+install.packages("dplyr")
+install.packages("dygraphs")
+install.packages("data.table")
+install.packages("quantmod")
+install.packages("qdapRegex")
+install.packages("htmlwidgets")
+install.packages("webshot")
+install.packages("reshape2")
+webshot::install_phantomjs()
 ```
 
 ## R Zipcode Package - CRAN Removal

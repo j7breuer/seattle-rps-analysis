@@ -13,7 +13,7 @@ require(dplyr)
 standardizeZipcode <- function(dataFrame, targetColumn, removeStatus){
 
   # For loop going through every unique zip code checking for inconsistencies 
-  for (i in unique(dataFrame[,targetColumn])){
+  for (i in unique(dataFrame[[targetColumn]])){
 
     # Checks character length, if longer than 5 zip code needs to be
     # trimmed down to first 5 characters: ex 29210-4209 -> 29210.
@@ -21,19 +21,19 @@ standardizeZipcode <- function(dataFrame, targetColumn, removeStatus){
     # it with an empty string that will be removed afterwards.
     if (nchar(i) < 5){
       # For zips that we are unable to determine, change them to empty
-      dataFrame[,targetColumn][dataFrame[,targetColumn] == i] <- ""
+      dataFrame[[targetColumn]][dataFrame[[targetColumn]] == i] <- ""
     }
     if (nchar(i) > 5){
       # For zips longer than 5 characters, trim down to first 5 characters
       newI <- substring(i, 1, 5) # Substring takes start-end placement and trims
-      dataFrame[,targetColumn][dataFrame[,targetColumn] == i] <- newI
+      dataFrame[[targetColumn]][dataFrame[[targetColumn]] == i] <- newI
     }
   }
 
   # If statement for user specification if no-match zip codes
   # should be removed from data frame. If specified as Y, remove them
   if (tolower(removeStatus) == "y"){
-    dataFrame <- dataFrame[dataFrame[,targetColumn] != "",] 
+    dataFrame <- dataFrame[dataFrame[[targetColumn]] != "",] 
   }
 
   # Return data frame back to user
